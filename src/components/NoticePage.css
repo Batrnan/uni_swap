@@ -1,0 +1,50 @@
+.notice-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* ── 상단 바 ── */
+.notice-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.notice-logo {
+  width: 100px;
+  cursor: pointer;
+}
+
+.notice-header-icons .icon {
+  font-size: 20px;
+  color: #555;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+/* ── 공지사항 타이틀 ── */
+.notice-header {
+  text-align: center;
+  margin: 0 0 24px;
+  font-size: 24px;
+}
+
+/* ── 테이블 ── */
+.notice-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.notice-table th,
+.notice-table td {
+  padding: 12px 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.notice-table th {
+  border-bottom: 2px solid #aaa;
+}
