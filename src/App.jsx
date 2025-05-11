@@ -1,10 +1,12 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LoginPage from "./components/LoginPage";
-import SignupPage from "./components/SignupPage";
-import MainPage from "./components/MainPage";
-import NoticePage from "./components/NoticePage";
-import NoticeDetailPage from "./components/NoticeDetailPage";
+import React from 'react';
+import './App.css';
+import ProfilePage from './pages/ProfilePage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LoginPage from './components/LoginPage';
+import SignupPage from './components/SignupPage';
+import MainPage from './components/MainPage';
+import NoticePage from './components/NoticePage';
+import NoticeDetailPage from './components/NoticeDetailPage';
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
         <Route path="/main" element={<MainPage />} />
         <Route path="/notices" element={<NoticePage />} />
         <Route path="/notices/:id" element={<NoticeDetailPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
     </BrowserRouter>
   );
