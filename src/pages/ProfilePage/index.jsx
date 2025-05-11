@@ -7,7 +7,7 @@ import UserProfile from '../../components/share/UserProfile';
 
 export default function ProfilePage() {
   return (
-    <div style={{ width: '600px', margin: '0 auto' }}>
+    <div style={{ maxWidth: '600px', margin: '0 auto' }}>
       <h1
         style={{
           fontWeight: 'bold',
@@ -27,7 +27,7 @@ export default function ProfilePage() {
         style={{
           display: 'flex',
           justifyContent: 'space-evenly',
-          marginTop: '20px',
+          marginTop: '50px',
           fontSize: '15px',
           borderBottom: '1px solid #ccc',
           paddingBottom: '30px',

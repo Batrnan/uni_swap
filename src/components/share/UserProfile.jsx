@@ -10,8 +10,8 @@ export default function UserProfile({ profileImageUrl, nickname, major }) {
     >
       <div
         style={{
-          width: 60,
-          height: 60,
+          width: 70,
+          height: 70,
           borderRadius: '50%',
           border: '1px solid black',
           backgroundColor: '#fff',
@@ -22,7 +22,11 @@ export default function UserProfile({ profileImageUrl, nickname, major }) {
         }}
       />
       <div>
-        <h1 style={{ fontWeight: '800', marginBottom: '5px' }}>{nickname}</h1>
+        <h1
+          style={{ fontSize: '20px', fontWeight: '800', marginBottom: '10px' }}
+        >
+          {nickname}
+        </h1>
         <p style={{ fontSize: '14px' }}>{major}</p>
       </div>
     </div>

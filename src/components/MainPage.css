@@ -1,0 +1,176 @@
+.main-container {
+  background-color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.main-wrapper {
+  width: 100%;
+  max-width: 1024px; /* 원하시는 최대 너비로 조정 */
+  margin: 0 auto; /* 좌우 마진 자동으로 가운데 정렬 */
+}
+
+.main-header,
+.category-nav,
+.tip-bar,
+.product-grid {
+  width: 100%;
+}
+
+/* HEADER */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo-section a {
+  display: inline-block;
+}
+
+.login-logo,
+.logo-text {
+  display: block; /* inline → block 으로 바꿔야 width가 잘 먹습니다 */
+  width: 100px; /* 원하시는 가로 폭으로 설정 */
+  height: auto; /* 비율 유지 */
+  cursor: pointer; /* 클릭 가능 표시 */
+}
+
+.cart-icon {
+  font-size: 24px;
+  color: #555;
+  margin-right: 8px;
+}
+
+.logo-text {
+  width: 100px;
+}
+
+.header-icons .icon {
+  font-size: 20px;
+  color: #555;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+/* CATEGORY NAV */
+.category-nav {
+  display: flex;
+  justify-content: center; /* ← 중앙 정렬 */
+  gap: 50px; /* ← 탭 사이 여백 */
+  margin-top: 24px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px; /* 밑줄 공간 확보 */
+}
+
+.nav-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  color: #777;
+  font-size: 14px;
+}
+
+.nav-item.active {
+  color: #3dd598;
+  border-bottom: 3px solid #3dd598;
+  font-weight: 500;
+}
+
+/* TIP BAR */
+.tip-bar {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.tip-icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* PRODUCT GRID */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.product-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.product-image {
+  background-color: #ddd;
+  width: 100%;
+  height: 100px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.product-title {
+  font-size: 14px;
+  margin: 0 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* FLOATING ACTION BUTTON */
+.fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #3dd598;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fab .icon {
+  margin-right: 8px;
+}
+
+/* 반응형 여유 주기 */
+@media (max-width: 480px) {
+  .header-icons .icon {
+    margin-left: 12px;
+  }
+  .cart-icon,
+  .header-icons .icon {
+    font-size: 18px;
+  }
+  .product-grid {
+    gap: 12px;
+  }
+  .fab {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 16px;
+  }
+}
