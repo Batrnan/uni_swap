@@ -1,11 +1,11 @@
 import sellImage from '/assets/sell.png';
 import likeImage from '/assets/like.png';
 import { IoMdSettings } from 'react-icons/io';
-import ReviewLinkItem from '../../components/profile/ReviewLinkItem';
-import ProfileActionItem from '../../components/profile/ProfileActionItem';
-import UserProfile from '../../components/share/UserProfile';
+import ReviewLinkItem from '../../../components/profile/ReviewLinkItem';
+import ProfileActionItem from '../../../components/profile/ProfileActionItem';
+import UserProfile from '../../../components/share/UserProfile';
 
-export default function ProfilePage() {
+const ProfilePage = () => {
   return (
     <div style={{ maxWidth: '600px', margin: '0 auto' }}>
       <h1
@@ -42,8 +42,9 @@ export default function ProfilePage() {
           label="내가 찜한 상품"
         />
         <ProfileActionItem
+          href={'/profile/edit'}
           icon={<IoMdSettings size={70} />}
-          label="프로필 수정"
+          label="프로필 설정"
         />
       </div>
       <div
@@ -60,4 +61,6 @@ export default function ProfilePage() {
       </div>
     </div>
   );
-}
+};
+
+export default ProfilePage;
