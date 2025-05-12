@@ -1,6 +1,6 @@
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 
-export default function ReviewLinkItem({ label }) {
+const ReviewLinkItem = ({ label }) => {
   return (
     <div
       style={{
@@ -14,4 +14,6 @@ export default function ReviewLinkItem({ label }) {
       <FaArrowAltCircleRight size={30} />
     </div>
   );
-}
+};
+
+export default ReviewLinkItem;

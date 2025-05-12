@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import ProfilePage from './pages/ProfilePage';
+import ProfilePage from './pages/profile/ProfilePage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import MainPage from './components/MainPage';
 import NoticePage from './components/NoticePage';
 import NoticeDetailPage from './components/NoticeDetailPage';
+import ProfileEdit from './pages/profile/ProfileEdit';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/notices" element={<NoticePage />} />
         <Route path="/notices/:id" element={<NoticeDetailPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/profile/edit" element={<ProfileEdit />} />
       </Routes>
     </BrowserRouter>
   );

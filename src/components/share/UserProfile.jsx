@@ -1,4 +1,4 @@
-export default function UserProfile({ profileImageUrl, nickname, major }) {
+const UserProfile = ({ profileImageUrl, nickname, major }) => {
   return (
     <div
       style={{
@@ -31,4 +31,6 @@ export default function UserProfile({ profileImageUrl, nickname, major }) {
       </div>
     </div>
   );
-}
+};
+
+export default UserProfile;
