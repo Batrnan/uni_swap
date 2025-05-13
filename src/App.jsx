@@ -8,6 +8,8 @@ import MainPage from './components/MainPage';
 import NoticePage from './components/NoticePage';
 import NoticeDetailPage from './components/NoticeDetailPage';
 import ProfileEdit from './pages/profile/ProfileEdit';
+import MyProductList from './pages/profile/MyProductList';
+import MyLikeList from './pages/profile/MyLikeList';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/notices/:id" element={<NoticeDetailPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/profile/edit" element={<ProfileEdit />} />
+        <Route path="/profile/myproduct" element={<MyProductList />} />
+        <Route path="/profile/mylike" element={<MyLikeList />} />
       </Routes>
     </BrowserRouter>
   );
