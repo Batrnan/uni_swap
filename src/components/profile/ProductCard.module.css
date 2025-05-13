@@ -1,0 +1,30 @@
+.card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+.imageArea {
+  width: 100%;
+  height: 200px;
+  background-color: #eee;
+}
+
+.title {
+  padding: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.likeIcon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}

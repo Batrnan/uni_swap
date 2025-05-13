@@ -34,10 +34,12 @@ const ProfilePage = () => {
         }}
       >
         <ProfileActionItem
+          href={'/profile/myproduct'}
           icon={<img src={sellImage} alt="판매" style={{ width: '70px' }} />}
           label="나의 판매 상품"
         />
         <ProfileActionItem
+          href={'/profile/mylike'}
           icon={<img src={likeImage} alt="찜" style={{ width: '70px' }} />}
           label="내가 찜한 상품"
         />
