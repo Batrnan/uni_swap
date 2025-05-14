@@ -1,9 +1,8 @@
-import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import './ProfileEdit.css';
+import styles from './ProfileEdit.module.css';
 
 const ProfileEdit = () => {
   const { control, handleSubmit } = useForm({
@@ -23,20 +22,20 @@ const ProfileEdit = () => {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-      <h1 style={titleStyle}>프로필 설정</h1>
-      <div style={{ width: '400px', margin: '0 auto' }}>
+    <div className={styles.container}>
+      <div className={styles.inner}>
+        <h1 className={styles.title}>프로필 설정</h1>
         {/* 프로필 이미지 영역 */}
-        <div style={{ display: 'flex', gap: '60px', alignItems: 'flex-end' }}>
-          <div style={profileBoxStyle} />
-          <div style={{ display: 'flex', gap: '20px' }}>
-            <button style={imageButtonStyle}>사진첨부</button>
-            <button style={imageButtonStyle}>사진삭제</button>
+        <div className={styles.profileRow}>
+          <div className={styles.profileBox} />
+          <div className={styles.profileButtons}>
+            <button className={styles.imageButton}>사진첨부</button>
+            <button className={styles.imageButton}>사진삭제</button>
           </div>
         </div>
 
         {/* 폼 시작 */}
-        <form onSubmit={handleSubmit(onSubmit)} style={formStyle}>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           {/* 사용자명 */}
           <LabelWithInput label="사용자명">
             <Controller
@@ -46,7 +45,7 @@ const ProfileEdit = () => {
                 <input
                   {...field}
                   placeholder="사용자명을 입력해주세요"
-                  style={inputStyle}
+                  className={styles.input}
                 />
               )}
             />
@@ -58,12 +57,12 @@ const ProfileEdit = () => {
               name="school"
               control={control}
               render={({ field }) => (
-                <select {...field} style={inputStyle}>
+                <select {...field} className={styles.select}>
                   <option value="">학교를 선택하세요</option>
                   <option value="서울대학교">서울대학교</option>
                   <option value="연세대학교">연세대학교</option>
                   <option value="고려대학교">고려대학교</option>
-                  <option value="고려대학교">가천대학교</option>
+                  <option value="가천대학교">가천대학교</option>
                 </select>
               )}
             />
@@ -75,7 +74,7 @@ const ProfileEdit = () => {
               name="major"
               control={control}
               render={({ field }) => (
-                <select {...field} style={inputStyle}>
+                <select {...field} className={styles.select}>
                   <option value="">학과를 선택하세요</option>
                   <option value="컴퓨터공학과">컴퓨터공학과</option>
                   <option value="전자공학과">전자공학과</option>
@@ -92,6 +91,7 @@ const ProfileEdit = () => {
               control={control}
               render={({ field }) => (
                 <DatePicker
+                  withPortal
                   placeholderText="생년월일을 선택하세요"
                   onChange={(date) => field.onChange(date)}
                   selected={field.value}
@@ -100,7 +100,7 @@ const ProfileEdit = () => {
                   showYearDropdown
                   scrollableYearDropdown
                   yearDropdownItemNumber={100}
-                  className="custom-datepicker-input"
+                  className={styles.datepickerInput}
                 />
               )}
             />
@@ -115,7 +115,7 @@ const ProfileEdit = () => {
                 <input
                   {...field}
                   placeholder="전화번호를 입력하세요"
-                  style={inputStyle}
+                  className={styles.input}
                 />
               )}
             />
@@ -130,21 +130,21 @@ const ProfileEdit = () => {
                 <input
                   {...field}
                   placeholder="카카오톡 ID를 입력하세요"
-                  style={inputStyle}
+                  className={styles.input}
                 />
               )}
             />
           </LabelWithInput>
 
           {/* 저장 / 취소 버튼 */}
-          <div style={buttonGroupStyle}>
-            <button type="submit" style={buttonStyle}>
+          <div className={styles.buttonGroup}>
+            <button type="submit" className={styles.button}>
               저장
             </button>
             <button
               type="button"
               onClick={() => navigate('/profile')}
-              style={buttonStyle}
+              className={styles.button}
             >
               취소
             </button>
@@ -156,67 +156,10 @@ const ProfileEdit = () => {
 };
 
 const LabelWithInput = ({ label, children }) => (
-  <div style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
-    <h1 style={{ width: '88px' }}>{label}</h1>
+  <div className={styles.labelRow}>
+    <h1 className={styles.labelTitle}>{label}</h1>
     {children}
   </div>
 );
-
-/* === 스타일 === */
-const titleStyle = {
-  fontSize: '32px',
-  fontWeight: 'bold',
-  marginBottom: '40px',
-  marginTop: '40px',
-};
-
-const profileBoxStyle = {
-  width: '120px',
-  height: '120px',
-  backgroundColor: '#ccc',
-  border: '1px solid #aaa',
-};
-
-const imageButtonStyle = {
-  width: '80px',
-  height: '32px',
-  cursor: 'pointer',
-  color: '#fff',
-  backgroundColor: '#55C9A6',
-  border: 'none',
-  borderRadius: '5px',
-};
-
-const formStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '15px',
-  marginTop: '40px',
-};
-
-const inputStyle = {
-  padding: '10px',
-  border: '1px solid #55C9A6',
-  borderRadius: '10px',
-  width: '320px',
-};
-
-const buttonStyle = {
-  width: '60px',
-  height: '32px',
-  color: '#fff',
-  backgroundColor: '#55C9A6',
-  border: 'none',
-  borderRadius: '5px',
-  cursor: 'pointer',
-};
-
-const buttonGroupStyle = {
-  marginTop: '20px',
-  width: '100%',
-  display: 'flex',
-  gap: '20px',
-  justifyContent: 'center',
-};
 
 export default ProfileEdit;

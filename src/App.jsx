@@ -1,6 +1,4 @@
-import React from 'react';
 import './App.css';
-import ProfilePage from './pages/profile/ProfilePage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
@@ -10,6 +8,10 @@ import NoticeDetailPage from './components/NoticeDetailPage';
 import ProfileEdit from './pages/profile/ProfileEdit';
 import MyProductList from './pages/profile/MyProductList';
 import MyLikeList from './pages/profile/MyLikeList';
+import HeaderLayout from './components/share/HeaderLayout';
+import MyBuyList from './pages/profile/MyBuyList';
+import MyProfile from './pages/profile/MyProfile';
+import PublicProfile from './pages/profile/PublicProfile';
 
 function App() {
   return (
@@ -17,13 +19,17 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/main" element={<MainPage />} />
-        <Route path="/notices" element={<NoticePage />} />
-        <Route path="/notices/:id" element={<NoticeDetailPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/profile/edit" element={<ProfileEdit />} />
-        <Route path="/profile/myproduct" element={<MyProductList />} />
-        <Route path="/profile/mylike" element={<MyLikeList />} />
+        <Route element={<HeaderLayout />}>
+          <Route path="/main" element={<MainPage />} />
+          <Route path="/notices" element={<NoticePage />} />
+          <Route path="/notices/:id" element={<NoticeDetailPage />} />
+          <Route path="/profile" element={<MyProfile />} />
+          <Route path="/profile/edit" element={<ProfileEdit />} />
+          <Route path="/profile/myproduct" element={<MyProductList />} />
+          <Route path="/profile/mylike" element={<MyLikeList />} />
+          <Route path="/profile/mybuy" element={<MyBuyList />} />
+          <Route path="/public-profile" element={<PublicProfile />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

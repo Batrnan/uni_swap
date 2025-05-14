@@ -1,34 +1,32 @@
+import { IoSettingsOutline } from 'react-icons/io5';
+import { Link, useLocation } from 'react-router-dom';
+import styles from './UserProfile.module.css';
+
 const UserProfile = ({ profileImageUrl, nickname, major }) => {
+  const location = useLocation();
+
+  // 현재 URL이 '/public-profile'이면 settings 아이콘을 숨깁니다.
+  const isPublicProfile = location.pathname === '/public-profile';
+
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '20px',
-        cursor: 'pointer',
-      }}
-    >
-      <div
-        style={{
-          width: 70,
-          height: 70,
-          borderRadius: '50%',
-          border: '1px solid black',
-          backgroundColor: '#fff',
-          backgroundImage: `url(${profileImageUrl})`,
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-        }}
-      />
-      <div>
-        <h1
-          style={{ fontSize: '20px', fontWeight: '800', marginBottom: '10px' }}
-        >
-          {nickname}
-        </h1>
-        <p style={{ fontSize: '14px' }}>{major}</p>
+    <div className={styles.container}>
+      <div className={styles.profileInfo}>
+        <div
+          className={styles.profileImage}
+          style={{
+            backgroundImage: `url(${profileImageUrl})`,
+          }}
+        />
+        <div>
+          <h1 className={styles.nickname}>{nickname}</h1>
+          <p className={styles.major}>{major}</p>
+        </div>
       </div>
+      {!isPublicProfile && (
+        <Link to="/profile/edit" className={styles.settingsLink}>
+          <IoSettingsOutline size={36} />
+        </Link>
+      )}
     </div>
   );
 };
