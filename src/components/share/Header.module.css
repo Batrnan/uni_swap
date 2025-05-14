@@ -1,0 +1,61 @@
+.header {
+  width: 1040px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: block; /* inline → block 으로 바꿔야 width가 잘 먹습니다 */
+  width: 100px; /* 원하시는 가로 폭으로 설정 */
+  height: auto; /* 비율 유지 */
+  cursor: pointer; /* 클릭 가능 표시 */
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+}
+
+.searchContainer {
+  position: relative;
+}
+
+.searchInput {
+  border: none;
+  border-bottom: 1px solid #55c9a6;
+  border-radius: 0;
+  outline: none;
+  padding: 10px;
+  padding-right: 30px;
+  height: 40px;
+  font-size: 14px;
+  width: 320px;
+}
+
+.searchInput::placeholder {
+  color: #c4c4c4; /* 원하는 색상으로 변경 */
+}
+
+.searchIcon {
+  position: absolute;
+  font-size: 20px;
+  color: #55c9a6;
+  cursor: pointer;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.icon {
+  font-size: 24px;
+  color: #555;
+  cursor: pointer;
+}
