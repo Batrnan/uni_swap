@@ -1,6 +1,7 @@
 import { FaArrowAltCircleRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const ReviewLinkItem = ({ label }) => {
+const ReviewLinkItem = ({ label, href }) => {
   return (
     <div
       style={{
@@ -11,7 +12,15 @@ const ReviewLinkItem = ({ label }) => {
       }}
     >
       <span>{label}</span>
-      <FaArrowAltCircleRight size={30} />
+      <Link
+        to={href}
+        style={{
+          textDecoration: 'none', // 언더라인 제거
+          color: 'inherit', // 현재 부모 요소의 색상 유지
+        }}
+      >
+        <FaArrowAltCircleRight size={30} />
+      </Link>
     </div>
   );
 };

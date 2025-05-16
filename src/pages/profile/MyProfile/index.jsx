@@ -35,8 +35,8 @@ const MyProfile = () => {
       </div>
       <div className={styles.reviewSection}>
         <h1 className={styles.reviewTitle}>리뷰</h1>
-        <ReviewLinkItem label="내가 쓴 리뷰" />
-        <ReviewLinkItem label="받은 리뷰" />
+        <ReviewLinkItem label="내가 쓴 리뷰" href="/profile/myreview" />
+        <ReviewLinkItem label="받은 리뷰" href="/profile/received-review" />
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import ProductLayout from '../../../components/profile/ProductLayout';
-import ReviewItem from '../../../components/profile/ReviewItem';
-import ReviewList from '../../../components/profile/ReviewList';
+import ReviewCheckItem from '../../../components/profile/ReviewCheckItem';
 
 const dummyData = [
   {
@@ -9,6 +8,7 @@ const dummyData = [
     like: true,
     price: '150,000,000',
     desc: '필기 안되어 있고 깨끗합니다.',
+    rate: 3,
   },
   {
     id: 2,
@@ -16,6 +16,7 @@ const dummyData = [
     like: true,
     price: '70,000',
     desc: '필기다.',
+    rate: 2,
   },
   {
     id: 3,
@@ -23,6 +24,7 @@ const dummyData = [
     like: true,
     price: '20,000',
     desc: '안되어 있고 깨끗합니다.',
+    rate: 3,
   },
   {
     id: 4,
@@ -30,6 +32,7 @@ const dummyData = [
     like: true,
     price: '3,000',
     desc: '필기 안되어 있고 깨끗합니다.',
+    rate: 4,
   },
   {
     id: 5,
@@ -37,6 +40,7 @@ const dummyData = [
     like: true,
     price: '4,000,000',
     desc: '필기 안되어 있고 깨끗합니다.',
+    rate: 3,
   },
   {
     id: 6,
@@ -61,21 +65,28 @@ const dummyData = [
   },
 ];
 
-const MyBuyList = () => {
+const ReceivedReview = () => {
   return (
-    <ProductLayout title="내가 구매한 상품">
-      <ReviewList>
+    <ProductLayout title="받은 리뷰">
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '32px',
+        }}
+      >
         {dummyData.map((product) => (
-          <ReviewItem
+          <ReviewCheckItem
             key={product.id}
             title={product.title}
-            price={product.price}
             desc={product.desc}
+            rate={product.rate}
+            received
           />
         ))}
-      </ReviewList>
+      </div>
     </ProductLayout>
   );
 };
 
-export default MyBuyList;
+export default ReceivedReview;
