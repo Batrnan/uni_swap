@@ -5,7 +5,7 @@ import ReviewList from '../../../components/profile/ReviewList';
 const dummyData = [
   {
     id: 1,
-    title: '확률과 통계 교재 판매합니다다다다다다다',
+    title: '확률과 통계 교재 판매합니다다다다다다다다다',
     like: true,
     price: '150,000,000',
     desc: '필기 안되어 있고 깨끗합니다.',
