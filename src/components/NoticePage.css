@@ -1,0 +1,39 @@
+/* src/components/NoticePage.css */
+
+.notice-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.notice-header {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.notice-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.notice-table th,
+.notice-table td {
+  padding: 12px 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.notice-table th {
+  border-bottom: 2px solid #aaa;
+}
+
+.notice-link {
+  color: #3dd598;
+  text-decoration: none;
+}
+
+.notice-link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,84 @@
+/* src/components/SignupPage.css */
+/* (기존 LoginPage와 동일한 레이아웃) */
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  background-color: #fff;
+}
+
+.signup-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.signup-logo {
+  width: 200px;
+  margin-bottom: 24px;
+}
+
+.signup-tagline {
+  margin-bottom: 32px;
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+}
+
+.signup-form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.signup-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #3dd598;
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.signup-error {
+  color: #e74c3c;
+  font-size: 14px;
+  text-align: center;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #3dd598;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.signup-button:hover {
+  background-color: #34c58a;
+}
+
+.back-login {
+  margin-top: 24px;
+  font-size: 14px;
+  color: #555;
+}
+.back-login-link {
+  color: #3dd598;
+  text-decoration: none;
+}
+.back-login-link:hover {
+  text-decoration: underline;
+}

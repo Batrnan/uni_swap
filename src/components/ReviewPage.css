@@ -1,0 +1,64 @@
+/* src/components/ReviewPage.css */
+.review-container {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.review-form-wrapper {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.review-header {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.star-rating {
+  display: flex;
+  gap: 8px;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.star {
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star.filled {
+  color: #3dd598;
+}
+
+.review-textarea {
+  width: 100%;
+  min-height: 150px;
+  border: 1px solid #3dd598;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 24px;
+  resize: vertical;
+}
+
+.review-submit-button {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 200px;
+  padding: 12px;
+  background-color: #3dd598;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.review-submit-button:hover {
+  background-color: #34c58a;
+}

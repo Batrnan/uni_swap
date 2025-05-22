@@ -1,0 +1,110 @@
+/* src/components/NoticeFormPage.css */
+
+/* ── 컨테이너 ── */
+.notice-edit-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.notice-edit-container .edit-form {
+  margin-top: 16px;
+}
+
+/* ── 상단 바 ── */
+.edit-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.notice-logo {
+  width: 100px;
+  cursor: pointer;
+}
+
+.edit-header-icons .icon {
+  font-size: 20px;
+  color: #555;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+/* ── 페이지 제목 ── */
+.edit-title {
+  text-align: center;
+  font-size: 24px;
+  margin: 24px 0;
+}
+/* ── 폼 ── */
+.edit-form .form-group {
+  margin-bottom: 20px;
+}
+
+.edit-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* input, date */
+.edit-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* file input 숨기기 */
+.file-input {
+  display: none;
+}
+
+/* 이미지 첨부 버튼 */
+.attach-button {
+  display: inline-block;
+  padding: 8px 14px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* textarea */
+.edit-textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+/* 등록 버튼 */
+.edit-submit-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  background-color: #3dd598;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.edit-submit-button:hover {
+  background-color: #34c58a;
+}
