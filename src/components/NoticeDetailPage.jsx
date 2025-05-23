@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { FaEllipsisH } from "react-icons/fa";
+import cheatImg from "../assets/Cheat.jpg"; // <-- 추가된 이미지 import
 import "./NoticeDetailPage.css";
 
 const notices = [
@@ -48,7 +49,7 @@ const NoticeDetailPage = () => {
     return (
       <div className="notice-detail-container">
         <p>해당 공지사항을 찾을 수 없습니다.</p>
-        <Link to="/notices">← 목록으로 돌아가기</Link>
+        <Link to="/notices">← 공지사항 목록으로</Link>
       </div>
     );
   }
@@ -101,11 +102,15 @@ const NoticeDetailPage = () => {
       <p className="notice-detail-date">{notice.date}</p>
       <hr />
 
+      {/* ★ 이미지 삽입 ★ */}
+      {notice.id === 1 && (
+        <div className="notice-detail-image">
+          <img src={cheatImg} alt={notice.title} />
+        </div>
+      )}
+
       {/* 본문 */}
       <div className="notice-detail-content">
-        <div className="notice-placeholder">
-          공지사항 이미지 또는 본문 첨부 영역
-        </div>
         <p>{notice.content}</p>
       </div>
 

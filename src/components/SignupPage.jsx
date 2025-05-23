@@ -1,7 +1,6 @@
 // src/components/SignupPage.jsx
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import "./SignupPage.css";
 import logo from "../assets/UNI_SWAP_Logo.png";
 
@@ -17,10 +16,10 @@ const SignupPage = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    // 간단 유효성 검사
+    // 1) 기본 유효성 검사
     if (
       !email.trim() ||
       !password ||
@@ -41,37 +40,16 @@ const SignupPage = () => {
       );
       return;
     }
-    setErrorMsg("");
 
-    try {
-      const payload = {
-        email,
-        password,
-        nickname,
-        studentId,
-        school,
-        major,
-        kakaoId,
-      };
-
-      // 백엔드가 준 API 엔드포인트
-      const response = await axios.post("/api/users/signup", payload, {
-        headers: { "Content-Type": "application/json" },
-      });
-
-      // 성공 시
-      if (response.status === 200) {
-        navigate("/main");
-      } else {
-        setErrorMsg(response.data.message || "회원가입에 실패했습니다.");
-      }
-    } catch (error) {
-      console.error(error);
-      setErrorMsg(
-        error.response?.data?.message ||
-          "서버 오류가 발생했습니다. 다시 시도해주세요."
-      );
+    // 2) 테스트용 중복 이메일 체크
+    if (email === "error@example.com") {
+      setErrorMsg("이미 사용 중인 이메일입니다.");
+      return;
     }
+
+    // 3) 통과했으면 에러 초기화 후 로그인 페이지로 이동
+    setErrorMsg("");
+    navigate("/");
   };
 
   return (

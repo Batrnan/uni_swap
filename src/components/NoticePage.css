@@ -1,18 +1,17 @@
 /* src/components/NoticePage.css */
-
 .notice-container {
   max-width: 800px;
   margin: 40px auto;
   padding: 0 20px;
-  box-sizing: border-box;
 }
 
 .notice-header {
   text-align: center;
-  font-size: 24px;
   margin-bottom: 24px;
+  font-size: 24px;
 }
 
+/* 테이블 전체 스타일 */
 .notice-table {
   width: 100%;
   border-collapse: collapse;
@@ -20,13 +19,28 @@
 
 .notice-table th,
 .notice-table td {
-  padding: 12px 8px;
+  padding: 12px;
   border-bottom: 1px solid #ddd;
-  text-align: left;
 }
 
 .notice-table th {
-  border-bottom: 2px solid #aaa;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* 제목 셀 내 이미지 및 링크 정렬 */
+.notice-title-cell {
+  display: flex;
+  align-items: center;
+}
+
+/* 썸네일 크기 조정 */
+.notice-thumb {
+  width: 60px;
+  height: auto;
+  margin-right: 12px;
+  border-radius: 4px;
+  object-fit: cover;
 }
 
 .notice-link {
