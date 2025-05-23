@@ -12,6 +12,10 @@ import HeaderLayout from './components/share/HeaderLayout';
 import MyBuyList from './pages/profile/MyBuyList';
 import MyProfile from './pages/profile/MyProfile';
 import PublicProfile from './pages/profile/PublicProfile';
+import MyProductDetail from "./pages/product/MyProductDetail";
+import ProductDetail from "./pages/product/ProductDetail";
+import WriteProduct from "./pages/product/WriteProduct";
+
 
 function App() {
   return (
@@ -29,6 +33,9 @@ function App() {
           <Route path="/profile/mylike" element={<MyLikeList />} />
           <Route path="/profile/mybuy" element={<MyBuyList />} />
           <Route path="/public-profile" element={<PublicProfile />} />
+          <Route path="/products" element={<ProductDetail />} />
+          <Route path="/Createproduct" element={<WriteProduct />} />
+          <Route path="/myproducts" element={<MyProductDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>
