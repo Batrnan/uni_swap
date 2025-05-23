@@ -188,3 +188,15 @@
     padding: 10px 16px;
   }
 }
+
+/* 1) 카드 전체를 감싸는 <Link> 자체가 앵커이므로, 링크 기본 스타일을 제거 */
+a.product-card {
+  text-decoration: none; /* 밑줄 없애기 */
+  color: inherit; /* 부모가 물려주는 컬러(보통 검정) 사용 */
+}
+
+/* 2) 카드 내부 제목 · 가격에도 명시적으로 컬러를 지정 */
+.product-card .product-title,
+.product-card .product-price {
+  color: #333; /* 원하는 기본 텍스트 컬러 */
+}

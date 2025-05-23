@@ -9,7 +9,10 @@ const chats = [
     id: "1",
     name: "GCW",
     avatar: "GCW.jpg",
-    messages: [{ fromMe: false, text: "구매하고 싶습니다!" }],
+    messages: [
+      { fromMe: true, text: "안녕하세요! 구매 가능할까요?" },
+      { fromMe: false, text: "네 가능합니다." },
+    ],
   },
   {
     id: "2",

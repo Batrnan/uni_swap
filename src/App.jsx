@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from "react";
-import './App.css';
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // 공통 컴포넌트
@@ -9,6 +9,7 @@ import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
 import MainPage from "./components/MainPage";
 import NoticePage from "./components/NoticePage";
+import NoticeFormPage from "./components/NoticeFormPage";
 import NoticeDetailPage from "./components/NoticeDetailPage";
 
 // 채팅 및 리뷰
@@ -16,20 +17,19 @@ import ChatPage from "./components/ChatPage";
 import ReviewPage from "./components/ReviewPage";
 
 // 프로필 관련
-import ProfileEdit from './pages/profile/ProfileEdit';
-import MyProductList from './pages/profile/MyProductList';
-import MyLikeList from './pages/profile/MyLikeList';
-import MyBuyList from './pages/profile/MyBuyList';
-import MyProfile from './pages/profile/MyProfile';
-import PublicProfile from './pages/profile/PublicProfile';
-import MyReview from './pages/profile/MyReview';
-import ReceivedReview from './pages/profile/ReceivedReview';
+import ProfileEdit from "./pages/profile/ProfileEdit";
+import MyProductList from "./pages/profile/MyProductList";
+import MyLikeList from "./pages/profile/MyLikeList";
+import MyBuyList from "./pages/profile/MyBuyList";
+import MyProfile from "./pages/profile/MyProfile";
+import PublicProfile from "./pages/profile/PublicProfile";
+import MyReview from "./pages/profile/MyReview";
+import ReceivedReview from "./pages/profile/ReceivedReview";
 
 // 상품 관련
 import MyProductDetail from "./pages/product/MyProductDetail";
 import ProductDetail from "./pages/product/ProductDetail";
 import WriteProduct from "./pages/product/WriteProduct";
-
 
 function App() {
   return (
@@ -64,6 +64,7 @@ function App() {
 
           {/* 상품 관련 */}
           <Route path="/products" element={<ProductDetail />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
           <Route path="/Createproduct" element={<WriteProduct />} />
           <Route path="/myproducts" element={<MyProductDetail />} />
         </Route>
@@ -73,7 +74,6 @@ function App() {
 }
 
 export default App;
-
 
 // 필수 설치 패키지 목록:
 // npm install react-router-dom react-icons react-datepicker date-fns

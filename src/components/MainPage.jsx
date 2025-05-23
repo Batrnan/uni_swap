@@ -1,6 +1,8 @@
 // src/components/MainPage.jsx
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
+import Header from "./share/Header";
 import "./MainPage.css";
 
 const categories = [
@@ -13,7 +15,6 @@ const categories = [
   "기타제품",
 ];
 
-// products 배열에 category 프로퍼티 추가
 const products = [
   {
     id: 1,
@@ -73,7 +74,7 @@ const products = [
   },
   {
     id: 9,
-    category: "무료나눔", // ← 여기 카테고리를 "무료나눔"으로 변경
+    category: "무료나눔",
     title: "CGV 상품권 팝니다",
     price: 0,
     image: "CGV.jpg",
@@ -88,10 +89,9 @@ const products = [
 ];
 
 const MainPage = () => {
-  // 초기 선택을 "전체"로
+  const navigate = useNavigate();
   const [selectedCat, setSelectedCat] = useState("전체");
 
-  // "전체"면 모든 상품, 아니면 해당 카테고리만
   const filteredProducts =
     selectedCat === "전체"
       ? products
@@ -99,6 +99,8 @@ const MainPage = () => {
 
   return (
     <div className="main-container">
+      {/* 공통 헤더 */}
+
       <div className="main-wrapper">
         {/* CATEGORY NAV */}
         <nav className="category-nav">
@@ -114,15 +116,25 @@ const MainPage = () => {
         </nav>
 
         {/* TIP BAR */}
-        <div className="tip-bar">
-          <span>거래 사기 방지 팁 및 피해 신고 관련</span>
-        </div>
+        <div className="tip-bar">거래 사기 방지 팁 및 피해 신고 관련</div>
 
         {/* PRODUCT GRID */}
         <section className="product-grid">
           {filteredProducts.map((p) => {
             const imgSrc = require(`../assets/${p.image}`);
-            return (
+            return p.id === 1 ? (
+              <Link
+                to={`/products/${p.id}`}
+                key={p.id}
+                className="product-card"
+              >
+                <img src={imgSrc} alt={p.title} className="product-image" />
+                <h3 className="product-title">{p.title}</h3>
+                <p className="product-price">
+                  {p.price > 0 ? `${p.price.toLocaleString()}원` : "무료나눔"}
+                </p>
+              </Link>
+            ) : (
               <div key={p.id} className="product-card">
                 <img src={imgSrc} alt={p.title} className="product-image" />
                 <h3 className="product-title">{p.title}</h3>
@@ -136,9 +148,8 @@ const MainPage = () => {
       </div>
 
       {/* FLOATING ACTION BUTTON */}
-      <button className="fab">
-        <FaPlus className="icon" />
-        판매글 쓰기
+      <button className="fab" onClick={() => navigate("/Createproduct")}>
+        <FaPlus className="icon" /> 판매글 쓰기
       </button>
     </div>
   );
