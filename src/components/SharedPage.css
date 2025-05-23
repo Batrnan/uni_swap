@@ -1,0 +1,49 @@
+.main-container {
+  background-color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.main-wrapper {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo-section a {
+  display: inline-block;
+}
+
+.login-logo {
+  display: block;
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+}
+
+.header-icons .icon {
+  font-size: 20px;
+  color: #555;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .header-icons .icon {
+    margin-left: 12px;
+    font-size: 18px;
+  }
+}

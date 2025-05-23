@@ -1,0 +1,36 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  margin: 30px;
+}
+
+.profileSection {
+  padding: 0 20px;
+}
+
+.actionSection {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  font-size: 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+}
+
+.reviewSection {
+  padding: 30px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reviewTitle {
+  font-weight: bold;
+  font-size: 30px;
+}

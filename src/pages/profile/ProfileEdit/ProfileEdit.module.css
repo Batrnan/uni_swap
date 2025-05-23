@@ -1,0 +1,93 @@
+.container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.profileRow {
+  display: flex;
+  gap: 60px;
+  align-items: flex-end;
+}
+
+.profileBox {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: 1px solid #aaa;
+}
+
+.profileButtons {
+  display: flex;
+  gap: 20px;
+}
+
+.imageButton {
+  width: 80px;
+  height: 32px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #55c9a6;
+  border: none;
+  border-radius: 5px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.labelTitle {
+  width: 88px;
+}
+
+.input,
+.select {
+  padding: 10px;
+  border: 1px solid #55c9a6;
+  border-radius: 10px;
+  width: 320px;
+}
+
+.buttonGroup {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.button {
+  width: 60px;
+  height: 32px;
+  color: #fff;
+  background-color: #55c9a6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* react-datepicker 커스텀 */
+.datepickerInput {
+  padding: 10px;
+  border: 1px solid #55c9a6;
+  border-radius: 10px;
+  width: 290px;
+  box-sizing: border-box;
+}

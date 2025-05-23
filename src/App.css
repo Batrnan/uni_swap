@@ -1,3 +1,11 @@
+/* 공통 스타일 초기화 */
+@import './reset.css';
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* React 기본 스타일 */
 .App {
   text-align: center;
 }
