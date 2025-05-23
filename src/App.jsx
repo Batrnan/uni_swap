@@ -15,7 +15,8 @@ import PublicProfile from './pages/profile/PublicProfile';
 import MyProductDetail from "./pages/product/MyProductDetail";
 import ProductDetail from "./pages/product/ProductDetail";
 import WriteProduct from "./pages/product/WriteProduct";
-
+import MyReview from './pages/profile/MyReview';
+import ReceivedReview from './pages/profile/ReceivedReview';
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
           <Route path="/profile/myproduct" element={<MyProductList />} />
           <Route path="/profile/mylike" element={<MyLikeList />} />
           <Route path="/profile/mybuy" element={<MyBuyList />} />
+          <Route path="/profile/myreview" element={<MyReview />} />
+          <Route path="/profile/received-review" element={<ReceivedReview />} />
           <Route path="/public-profile" element={<PublicProfile />} />
           <Route path="/products" element={<ProductDetail />} />
           <Route path="/Createproduct" element={<WriteProduct />} />

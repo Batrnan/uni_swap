@@ -1,11 +1,17 @@
-import styles from './ProductList.module.css';
 import ProductCard from './ProductCard';
+import ProductLayout from './ProductLayout';
 
 const ProductList = ({ title, children: products, showLikeButton }) => {
   return (
-    <div className={styles.container}>
-      {title && <h2 className={styles.title}>{title}</h2>}
-      <div className={styles.cardGrid}>
+    <ProductLayout title={title}>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr 1fr',
+          gridTemplateRows: 'repeat(3, 250px)',
+          gap: '20px',
+        }}
+      >
         {products.map((product) => (
           <ProductCard
             key={product.id}
@@ -15,7 +21,7 @@ const ProductList = ({ title, children: products, showLikeButton }) => {
           />
         ))}
       </div>
-    </div>
+    </ProductLayout>
   );
 };
 

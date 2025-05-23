@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  padding: 24px 16px 24px 16px;
+
+  border-radius: 6px;
+  position: relative;
+  /* 오른쪽, 아래쪽만 그림자 */
+  box-shadow: 5px 5px 8px -6px rgba(0, 0, 0, 0.13);
+  border-bottom: 2px solid #55c9a6;
+}
+
+.fullBorder {
+  border: 2px solid #55c9a6 !important; /* 상하좌우 모두 */
+}
+
+.thumb {
+  width: 120px;
+  height: 120px;
+  background: #ededed;
+  border-radius: 4px;
+  margin-right: 24px;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.price {
+  color: #15806a;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.desc {
+  color: #b0b0b0;
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+.arrow {
+  font-size: 30px;
+  color: #222;
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+.write {
+  border-radius: 5px;
+  background-color: #55c9a6;
+  color: #fff;
+  border: none;
+  position: absolute;
+  font-size: 16px;
+  padding: 8px 20px;
+  right: 16px;
+  bottom: 16px;
+  cursor: pointer;
+}
+
+.write:hover {
+  background-color: #399e91;
+}
