@@ -1,79 +1,97 @@
-/* 1) html/body/최상위/#root 높이를 100%로 잡아 줍니다 */
+/* src/components/LoginPage.css */
+
+/* 1) html/body/#root 전체 하얀 배경, 100% 높이 */
 html,
 body,
 #root {
-  height: 100%;
   margin: 0;
-}
-
-/* 2) 뷰포트 전체를 flex 컨테이너로 만들어서 아이템을 가로/세로 중앙에 배치 */
-.login-container {
-  display: flex;
-  justify-content: center; /* 가로 중앙 */
-  align-items: center; /* 세로 중앙 */
-  height: 100%; /* html/body와 맞춰줘야 100vh 효과 */
-  background-color: #f9f9f9;
-}
-
-/* 3) 카드 자체는 고정(width) 혹은 최대폭(max-width)을 주고 flex column */
-.login-card {
-  width: 600px; /* 원하시는 고정 폭 */
-  max-width: 90%; /* 너무 작아질 때엔 뷰포트 대비 90% 이내 */
-  padding: 60px 40px;
+  height: 100%;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
+/* 2) 화면 전체 flex 중앙 정렬 */
+.login-container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* 세로로도 완전 채우고 싶으면 justify-content:center; 추가 가능 */
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
 }
 
-/* 4) 로고 크기 */
+/* 3) 로고 */
 .login-logo {
   width: 200px;
+  height: auto;
   margin-bottom: 40px;
-  cursor: pointer;
 }
 
-/* 5) input 너비를 카드 내부에 맞춰 */
+/* 4) 폼: 최대 400px, 가운데 정렬 */
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 5) 인풋 필드 */
 .login-input {
   width: 100%;
-  max-width: 300px; /* 넘치지 않도록 */
   padding: 12px 20px;
-  margin: 10px 0;
   border: 1px solid #3dd598;
   border-radius: 25px;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
-/* 6) 가입 링크 */
-.signup-text {
-  margin-top: 20px;
+/* 6) 에러 메시지 */
+.login-error {
+  color: #e74c3c;
   font-size: 14px;
+  text-align: center;
 }
-.signup-text a {
+
+/* 7) 로그인 버튼 */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3dd598;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.login-button:hover {
+  background-color: #34c58a;
+}
+
+/* 8) 회원가입 안내 링크 */
+.login-signup-text {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+.login-signup-text a {
   color: #3dd598;
   text-decoration: none;
 }
-.signup-text a:hover {
+.login-signup-text a:hover {
   text-decoration: underline;
 }
 
-/* src/components/LoginPage.css */
-/* …기존 스타일 아래에 추가… */
-
+/* 9) 테스트 버튼 */
 .login-test-btn {
-  margin-top: 12px;
+  margin-top: 8px;
   background: none;
   border: none;
   font-size: 12px;
   color: #999;
-}
-.login-test-btn a {
-  color: inherit;
-  text-decoration: none;
+  cursor: pointer;
 }
 .login-test-btn:hover {
   color: #666;

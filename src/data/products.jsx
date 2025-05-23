@@ -1,0 +1,73 @@
+// src/data/products.js
+export const products = [
+  {
+    id: 1,
+    category: "교재",
+    title: "[인기상품] 활동 교재 판매합니다.",
+    price: 8000,
+    image: "Activity_Book.jpg",
+  },
+  {
+    id: 2,
+    category: "기타제품",
+    title: "투썸 기프티콘 팝니당.",
+    price: 14000,
+    image: "Giftcon.jpg",
+  },
+  {
+    id: 3,
+    category: "의류",
+    title: "가천 후드티 S 사이즈 팔아요",
+    price: 15000,
+    image: "Gachon_Hood.jpg",
+  },
+  {
+    id: 4,
+    category: "교재",
+    title: "학부생 통계 교재 판매합니다.",
+    price: 5000,
+    image: "Statistics_Book.jpg",
+  },
+  {
+    id: 5,
+    category: "기타제품",
+    title: "skt 2g",
+    price: 3000,
+    image: "SKT.jpg",
+  },
+  {
+    id: 6,
+    category: "문구류",
+    title: "문구 세트 정리합니다",
+    price: 1000,
+    image: "Stationery.jpg",
+  },
+  {
+    id: 7,
+    category: "교재",
+    title: "이산수학 팝니다",
+    price: 15000,
+    image: "Discrete_Mathematics.jpg",
+  },
+  {
+    id: 8,
+    category: "교재",
+    title: "운영체제 공룡책 팝니다",
+    price: 20000,
+    image: "Operating_System.jpg",
+  },
+  {
+    id: 9,
+    category: "무료나눔",
+    title: "CGV 상품권 팝니다",
+    price: 0,
+    image: "CGV.jpg",
+  },
+  {
+    id: 10,
+    category: "생활용품",
+    title: "폼클렌징 팝니다",
+    price: 6000,
+    image: "Form_Cleansing.jpg",
+  },
+];
