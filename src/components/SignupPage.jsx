@@ -7,47 +7,38 @@ import logo from "../assets/UNI_SWAP_Logo.png";
 const SignupPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPw, setConfirmPw] = useState("");
+  const [name, setName] = useState("");
   const [nickname, setNickname] = useState("");
   const [studentId, setStudentId] = useState("");
   const [school, setSchool] = useState("");
   const [major, setMajor] = useState("");
-  const [kakaoId, setKakaoId] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // 1) 기본 유효성 검사
+    // 모두 입력되었는지 검증
     if (
       !email.trim() ||
       !password ||
-      !confirmPw ||
-      password !== confirmPw ||
+      !name.trim() ||
       !nickname.trim() ||
       !studentId.trim() ||
       !school.trim() ||
-      !major.trim() ||
-      !kakaoId.trim()
+      !major.trim()
     ) {
-      setErrorMsg(
-        !email.trim() || !password || !confirmPw
-          ? "이메일/비밀번호를 모두 입력하고, 비밀번호를 확인해주세요."
-          : password !== confirmPw
-          ? "비밀번호가 일치하지 않습니다."
-          : "필수 입력란을 모두 채워주세요."
-      );
+      setErrorMsg("필수 입력란을 모두 채워주세요.");
       return;
     }
 
-    // 2) 테스트용 중복 이메일 체크
+    // (선택) 중복 이메일 테스트
     if (email === "error@example.com") {
       setErrorMsg("이미 사용 중인 이메일입니다.");
       return;
     }
 
-    // 3) 통과했으면 에러 초기화 후 로그인 페이지로 이동
+    // 통과했으면 에러 초기화 후 로그인 페이지로
     setErrorMsg("");
     navigate("/");
   };
@@ -78,10 +69,10 @@ const SignupPage = () => {
         />
 
         <input
-          type="password"
-          placeholder="비밀번호 확인"
-          value={confirmPw}
-          onChange={(e) => setConfirmPw(e.target.value)}
+          type="text"
+          placeholder="이름"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           className="signup-input"
         />
 
@@ -114,14 +105,6 @@ const SignupPage = () => {
           placeholder="학과"
           value={major}
           onChange={(e) => setMajor(e.target.value)}
-          className="signup-input"
-        />
-
-        <input
-          type="text"
-          placeholder="Kakao ID"
-          value={kakaoId}
-          onChange={(e) => setKakaoId(e.target.value)}
           className="signup-input"
         />
 
