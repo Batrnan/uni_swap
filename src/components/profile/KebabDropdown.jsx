@@ -1,10 +1,20 @@
 import { useState, useRef, useEffect } from 'react';
 import { GoKebabHorizontal } from 'react-icons/go';
-import styles from './KebabDropdown.module.css'; // 드롭다운 관련 스타일
+import styles from './KebabDropdown.module.css';
+import { useNavigate } from 'react-router-dom';
 
-const KebabDropdown = () => {
+const KebabDropdown = ({ id }) => {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/products/${id}`);
+  };
+
+  const handleReviewUpdate = () => {
+    navigate(`/review/${id}`);
+  };
 
   // 드롭다운 외부 클릭 시 닫기
   useEffect(() => {
@@ -32,10 +42,10 @@ const KebabDropdown = () => {
       />
       {open && (
         <div className={styles.dropdown}>
-          <button className={styles.dropdownItem} onClick={() => {}}>
+          <button className={styles.dropdownItem} onClick={handleClick}>
             상품 보기
           </button>
-          <button className={styles.dropdownItem} onClick={() => {}}>
+          <button className={styles.dropdownItem} onClick={handleReviewUpdate}>
             리뷰 수정
           </button>
           <button className={styles.dropdownItem} onClick={() => {}}>

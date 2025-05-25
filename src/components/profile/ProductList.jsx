@@ -9,14 +9,14 @@ const ProductList = ({ title, children: products, showLikeButton }) => {
           display: 'grid',
           gridTemplateColumns: '1fr 1fr 1fr',
           gridTemplateRows: 'repeat(3, 250px)',
-          gap: '20px',
+          gap: '40px 20px',
         }}
       >
         {products.map((product) => (
           <ProductCard
             key={product.id}
-            title={product.title}
-            initialLike={product.like}
+            {...product}
+            product={product}
             showLikeButton={showLikeButton}
           />
         ))}

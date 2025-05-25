@@ -1,18 +1,16 @@
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './ProfileEdit.module.css';
 
 const ProfileEdit = () => {
   const { control, handleSubmit } = useForm({
     defaultValues: {
-      username: '홍길동',
+      name: '홍길동',
+      nickname: '길동이',
       school: '가천대학교',
       major: '소프트웨어융합학과',
-      birth: null,
-      phone: '',
-      kakao: '',
+      stdId: 202334297,
     },
   });
   const navigate = useNavigate();
@@ -36,7 +34,21 @@ const ProfileEdit = () => {
       {/* 폼 시작 */}
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         {/* 사용자명 */}
-        <LabelWithInput label="사용자명">
+        <LabelWithInput label="이름">
+          <Controller
+            name="name"
+            control={control}
+            render={({ field }) => (
+              <input
+                {...field}
+                placeholder="사용자명을 입력해주세요"
+                className={styles.input}
+              />
+            )}
+          />
+        </LabelWithInput>
+
+        <LabelWithInput label="닉네임">
           <Controller
             name="username"
             control={control}
@@ -84,23 +96,15 @@ const ProfileEdit = () => {
           />
         </LabelWithInput>
 
-        {/* 생년월일 - DatePicker */}
-        <LabelWithInput label="생년월일">
+        <LabelWithInput label="학번">
           <Controller
-            name="birth"
+            name="stdId"
             control={control}
             render={({ field }) => (
-              <DatePicker
-                withPortal
-                placeholderText="생년월일을 선택하세요"
-                onChange={(date) => field.onChange(date)}
-                selected={field.value}
-                dateFormat="yyyy-MM-dd"
-                maxDate={new Date()}
-                showYearDropdown
-                scrollableYearDropdown
-                yearDropdownItemNumber={100}
-                className={styles.datepickerInput}
+              <input
+                {...field}
+                placeholder="학번을 입력하세요"
+                className={styles.input}
               />
             )}
           />

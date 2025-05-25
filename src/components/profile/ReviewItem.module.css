@@ -17,9 +17,9 @@
 .thumb {
   width: 120px;
   height: 120px;
-  background: #ededed;
   border-radius: 4px;
   margin-right: 24px;
+  object-fit: cover; /* 이미지 비율 유지하며 채우기 */
   flex-shrink: 0;
 }
 
