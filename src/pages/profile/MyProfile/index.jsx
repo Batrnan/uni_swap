@@ -11,9 +11,9 @@ const MyProfile = () => {
       <h1 className={styles.title}>프로필</h1>
       <div className={styles.profileSection}>
         <UserProfile
-          profileImageUrl="/assets/carrot.png"
-          nickname="당근"
-          major="가천대 소프트웨어전공"
+          profileImageUrl="/assets/gildong.jpg"
+          nickname="홍길동"
+          major="가천대 소프트웨어융합학과"
         />
       </div>
       <div className={styles.actionSection}>

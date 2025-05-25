@@ -7,9 +7,9 @@ import styles from './ProfileEdit.module.css';
 const ProfileEdit = () => {
   const { control, handleSubmit } = useForm({
     defaultValues: {
-      username: '',
-      school: '',
-      major: '',
+      username: '홍길동',
+      school: '가천대학교',
+      major: '소프트웨어융합학과',
       birth: null,
       phone: '',
       kakao: '',
@@ -78,6 +78,7 @@ const ProfileEdit = () => {
                 <option value="컴퓨터공학과">컴퓨터공학과</option>
                 <option value="전자공학과">전자공학과</option>
                 <option value="경영학과">경영학과</option>
+                <option value="소프트웨어융합학과">소프트웨어융합학과</option>
               </select>
             )}
           />
