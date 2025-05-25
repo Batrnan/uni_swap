@@ -1,9 +1,7 @@
 // src/components/NoticePage.js
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaHome, FaUser } from "react-icons/fa";
 import "./NoticePage.css";
-import logo from "../assets/UNI_SWAP_Logo.png";
 
 const notices = [
   { id: 1, title: "거래 사기 방지 팁 및 피해 신고 관련", date: "2025.05.02" },
@@ -13,21 +11,10 @@ const notices = [
 
 const NoticePage = () => (
   <div className="notice-container">
-    <header className="notice-topbar">
-      <Link to="/main">
-        <img src={logo} alt="UNI_SWAP" className="notice-logo" />
-      </Link>
-      <div className="notice-header-icons">
-        <Link to="/main">
-          <FaHome className="icon" />
-        </Link>
-        <Link to="/profile">
-          <FaUser className="icon" />
-        </Link>
-      </div>
-    </header>
-
+    {/* ① 페이지 제목 */}
     <h2 className="notice-header">공지사항</h2>
+
+    {/* ② 리스트 테이블 */}
     <table className="notice-table">
       <thead>
         <tr>
@@ -39,7 +26,6 @@ const NoticePage = () => (
         {notices.map((n) => (
           <tr key={n.id}>
             <td>
-              {/* 여기를 Link로 감싸면 클릭 시 상세 페이지로 이동 */}
               <Link to={`/notices/${n.id}`} className="notice-link">
                 {n.title}
               </Link>

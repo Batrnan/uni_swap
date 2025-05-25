@@ -1,3 +1,4 @@
+// src/components/share/Header.js
 import logo from '../../assets/UNI_SWAP_Logo.png';
 import { Link } from 'react-router-dom';
 import { FaBullhorn, FaComments, FaSearch, FaUser } from 'react-icons/fa';
@@ -21,10 +22,18 @@ const Header = () => {
           />
           <FaSearch className={styles.searchIcon} />
         </div>
+
+        {/* 공지사항 */}
         <Link to="/notices">
           <FaBullhorn className={styles.icon} />
         </Link>
-        <FaComments className={styles.icon} />
+
+        {/* 채팅 */}
+        <Link to="/chat">
+          <FaComments className={styles.icon} />
+        </Link>
+
+        {/* 프로필 */}
         <Link to="/profile">
           <FaUser className={styles.icon} />
         </Link>

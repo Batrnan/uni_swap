@@ -1,9 +1,9 @@
-import sellImage from '/assets/sell.png';
-import likeImage from '/assets/like.png';
-import ReviewLinkItem from '../../../components/profile/ReviewLinkItem';
-import ProfileActionItem from '../../../components/profile/ProfileActionItem';
-import UserProfile from '../../../components/share/UserProfile';
-import styles from './ProfilePage.module.css';
+import sellImage from "../../../assets/sell.png";
+import likeImage from "../../../assets/like.png";
+import ReviewLinkItem from "../../../components/profile/ReviewLinkItem";
+import ProfileActionItem from "../../../components/profile/ProfileActionItem";
+import UserProfile from "../../../components/share/UserProfile";
+import styles from "./ProfilePage.module.css";
 
 const MyProfile = () => {
   return (
@@ -18,18 +18,18 @@ const MyProfile = () => {
       </div>
       <div className={styles.actionSection}>
         <ProfileActionItem
-          href={'/profile/mybuy'}
-          icon={<img src={sellImage} alt="구매" style={{ width: '70px' }} />}
+          href={"/profile/mybuy"}
+          icon={<img src={sellImage} alt="구매" style={{ width: "70px" }} />}
           label="구매한 상품"
         />
         <ProfileActionItem
-          href={'/profile/myproduct'}
-          icon={<img src={sellImage} alt="판매" style={{ width: '70px' }} />}
+          href={"/profile/myproduct"}
+          icon={<img src={sellImage} alt="판매" style={{ width: "70px" }} />}
           label="나의 판매 상품"
         />
         <ProfileActionItem
-          href={'/profile/mylike'}
-          icon={<img src={likeImage} alt="찜" style={{ width: '70px' }} />}
+          href={"/profile/mylike"}
+          icon={<img src={likeImage} alt="찜" style={{ width: "70px" }} />}
           label="내가 찜한 상품"
         />
       </div>
