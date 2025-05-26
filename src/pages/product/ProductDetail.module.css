@@ -1,19 +1,12 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+  width: 90vw;
   max-width: 1000px;
-  width: 95%;
-  margin: 100px auto 0 auto;
-  margin-left: 420px;
-  padding: 60px;
-  background-color: #fff;
+  margin: 100px auto;
+  padding: 2vw;
+  background: #fff;
   border-radius: 9.6px;
   box-shadow: 0 0 6.4px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
-  border: none;
 }
 
 .profileSection {
@@ -29,7 +22,7 @@
   height: 57px;
   border-radius: 50%;
   object-fit: cover;
-  background-color: #ccc;/*임시배경색*/
+  background-color: #ccc; /*임시배경색*/
 }
 
 .profileText {
@@ -76,7 +69,7 @@
   flex-shrink: 0;
   border-radius: 9.6px;
   border: 1.2px solid #ccc;
-  background-color: #ccc;/*임시배경색*/
+  background-color: #ccc; /*임시배경색*/
 }
 
 .productInfo {
@@ -118,7 +111,7 @@
   flex-shrink: 0;
   width: 12.8px;
   height: 12.8px;
-  fill: #6EDBBA;
+  fill: #6edbba;
 }
 
 .locationName {
@@ -143,7 +136,7 @@
 }
 
 .chatButton {
-  background-color: #6EDBBA;
+  background-color: #6edbba;
   color: white;
   border: none;
   padding: 12px 120px;
@@ -169,24 +162,24 @@
   align-items: center;
   margin-left: 20px;
   justify-content: center;
-  width: 48px;    /* chatButton 높이와 같게 */
-  height: 48px;   /* 정사각형 */
+  width: 48px; /* chatButton 높이와 같게 */
+  height: 48px; /* 정사각형 */
   border-radius: 6px;
   transition: fill 0.2s ease, stroke 0.2s ease, background-color 0.2s ease;
 }
 
 .likeButton svg {
-  width: 35px;    /* 하트 크기 조절 */
+  width: 35px; /* 하트 크기 조절 */
   height: 35px;
-  fill: none;
-  stroke: #6EDBBA;
+  fill: #6edbba; /* 채워진 하트 색 */
+  stroke: #6edbba;
   stroke-width: 2;
   transition: fill 0.3s ease, stroke 0.3s ease;
 }
 
 .likeButton.liked svg {
-  fill: red;      /* 선택 시 빨간색 채우기 */
-  stroke: red;
+  fill: #6edbba; /* 선택 시 빨간색 채우기 */
+  stroke: #6edbba;
 }
 
 .profileImage {
@@ -204,12 +197,12 @@
 }
 
 .major {
-  font-size: 1.44rem;  /* 1.2 * 1.2 */
-  margin-top: 5.76px;  /* 4.8 * 1.2 */
+  font-size: 1.44rem; /* 1.2 * 1.2 */
+  margin-top: 5.76px; /* 4.8 * 1.2 */
 }
 
 .productSection {
-  gap: 28.8px;     /* 24 * 1.2 */
+  gap: 28.8px; /* 24 * 1.2 */
   height: 316.8px; /* 264 * 1.2 */
   margin-top: 24px; /* 20 * 1.2 */
 }
@@ -271,4 +264,3 @@
   width: 42px; /* 35 * 1.2 */
   height: 42px;
 }
-
