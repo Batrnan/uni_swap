@@ -17,6 +17,8 @@ import ProductDetail from "./pages/product/ProductDetail";
 import WriteProduct from "./pages/product/WriteProduct";
 import MyReview from './pages/profile/MyReview';
 import ReceivedReview from './pages/profile/ReceivedReview';
+import ComplainForm from "./pages/complains/ComplainForm";
+
 
 function App() {
   return (
@@ -39,6 +41,7 @@ function App() {
           <Route path="/products" element={<ProductDetail />} />
           <Route path="/Createproduct" element={<WriteProduct />} />
           <Route path="/myproducts" element={<MyProductDetail />} />
+          <Route path="/complains" element={<ComplainForm />} />
         </Route>
       </Routes>
     </BrowserRouter>
