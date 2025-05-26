@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.4rem;
+  margin-top:50px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+}
+
+.radioGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 8rem;
+  margin-bottom: 1.2rem;
+  margin-top: 24px;
+  justify-content: start;
+}
+
+.radioItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-start;
+  font-size: 1.rem;
+}
+
+.textarea {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 2rem;
+  height: 144px;
+  padding: 1.2rem;
+  border: 1px solid #6EDBBA;
+  border-radius: 0.9rem;
+  font-size: 1rem;
+  resize: none;
+}
+
+.textarea:disabled {
+  background-color: #f0f0f0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.submitButton {
+  margin-top: 2rem;
+  padding: 0.9rem 13rem;
+  background-color: #6EDBBA;
+  border: none;
+  border-radius: 0.9rem;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #5ecab3;
+}

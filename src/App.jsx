@@ -31,6 +31,10 @@ import MyProductDetail from "./pages/product/MyProductDetail";
 import ProductDetail from "./pages/product/ProductDetail";
 import WriteProduct from "./pages/product/WriteProduct";
 
+// 신고 관련
+import ComplainForm from "./pages/complains/ComplainForm";
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -67,6 +71,7 @@ function App() {
           <Route path="/products/:id" element={<ProductDetail />} />
           <Route path="/Createproduct" element={<WriteProduct />} />
           <Route path="/myproducts" element={<MyProductDetail />} />
+          <Route path="/complains" element={<ComplainForm />} />
         </Route>
       </Routes>
     </BrowserRouter>
