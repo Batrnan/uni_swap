@@ -1,10 +1,19 @@
 .card {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  overflow: hidden;
   background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  padding: 12px;
   cursor: pointer;
+  border: 2px solid transparent;
   position: relative;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-color: #3dd598;
 }
 
 .imageArea {
