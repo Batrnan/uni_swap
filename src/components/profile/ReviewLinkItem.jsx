@@ -1,4 +1,3 @@
-import { FaArrowAltCircleRight, FaArrowRight } from 'react-icons/fa';
 import { IoIosArrowForward } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
