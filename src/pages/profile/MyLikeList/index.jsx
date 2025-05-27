@@ -1,10 +1,10 @@
 import ProductList from '../../../components/profile/ProductList';
-import { products } from '../../../data/products';
+import { likeProducts } from '../../../data/likeProducts';
 
 const MyLikeList = () => {
   return (
     <ProductList title="내가 찜한 상품" showLikeButton>
-      {products}
+      {likeProducts}
     </ProductList>
   );
 };

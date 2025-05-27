@@ -104,10 +104,12 @@
 /* TIP BAR */
 .tip-bar {
   display: flex;
+  gap: 12px;
   align-items: center;
   margin: 16px 0;
   font-size: 14px;
   color: #555;
+  cursor: pointer;
 }
 
 .tip-icon {

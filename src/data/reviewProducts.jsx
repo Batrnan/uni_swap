@@ -1,19 +1,4 @@
-import gildong from '../assets/gildong.jpg';
-
-export const products = [
-  {
-    id: 1,
-    category: '교재',
-    title: '[인기상품] 활동 교재 판매합니다.',
-    price: 8000,
-    image: 'Activity_Book.jpg',
-    desc: '사용감 거의 없고 깨끗한 상태입니다.',
-    rate: 4,
-    liked: true,
-    userName: '홍길동',
-    major: '소프트웨어융합학과',
-    profileImageUrl: gildong,
-  },
+export const writeReviews = [
   {
     id: 2,
     category: '기타제품',
@@ -25,20 +10,7 @@ export const products = [
     liked: false,
     userName: '김지훈',
     major: '경영학과',
-    profileImageUrl: 'https://cdn-icons-png.flaticon.com/512/2922/2922515.png',
-  },
-  {
-    id: 3,
-    category: '의류',
-    title: '가천 후드티 S 사이즈 팔아요',
-    price: 15000,
-    image: 'Gachon_Hood.jpg',
-    desc: '한두 번 착용한 거의 새 옷입니다.',
-    rate: 3,
-    liked: true,
-    userName: '홍길동',
-    major: '소프트웨어융합학과',
-    profileImageUrl: gildong,
+    profileImageUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
   },
   {
     id: 4,
@@ -51,33 +23,7 @@ export const products = [
     liked: false,
     userName: '이수민',
     major: '소프트웨어학과',
-    profileImageUrl: 'https://cdn-icons-png.flaticon.com/512/2922/2922510.png',
-  },
-  {
-    id: 5,
-    category: '기타제품',
-    title: 'skt 2g',
-    price: 3000,
-    image: 'SKT.jpg',
-    desc: '중고폰으로 사용하던 제품입니다.',
-    rate: 2,
-    liked: true,
-    userName: '홍길동',
-    major: '소프트웨어융합학과',
-    profileImageUrl: gildong,
-  },
-  {
-    id: 6,
-    category: '문구류',
-    title: '문구 세트 정리합니다',
-    price: 1000,
-    image: 'Stationery.jpg',
-    desc: '펜, 노트 등 다양하게 포함되어 있습니다.',
-    rate: 5,
-    liked: false,
-    userName: '홍길동',
-    major: '소프트웨어융합학과',
-    profileImageUrl: gildong,
+    profileImageUrl: 'https://randomuser.me/api/portraits/women/21.jpg',
   },
   {
     id: 7,
@@ -90,7 +36,7 @@ export const products = [
     liked: false,
     userName: '박재훈',
     major: '소프트웨어학과',
-    profileImageUrl: 'https://cdn-icons-png.flaticon.com/512/4140/4140048.png',
+    profileImageUrl: 'https://randomuser.me/api/portraits/men/47.jpg',
   },
   {
     id: 8,
@@ -103,7 +49,7 @@ export const products = [
     liked: false,
     userName: '김지영',
     major: 'AI학과',
-    profileImageUrl: 'https://cdn-icons-png.flaticon.com/512/219/219969.png',
+    profileImageUrl: 'https://randomuser.me/api/portraits/women/52.jpg',
   },
   {
     id: 9,
@@ -116,8 +62,7 @@ export const products = [
     liked: false,
     userName: '정예린',
     major: 'AI학과',
-    profileImageUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png',
+    profileImageUrl: 'https://randomuser.me/api/portraits/women/44.jpg',
   },
   {
     id: 10,
@@ -130,8 +75,7 @@ export const products = [
     liked: true,
     userName: '최하은',
     major: '글로벌비즈니스학과',
-    profileImageUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png',
+    profileImageUrl: 'https://randomuser.me/api/portraits/women/66.jpg',
   },
   {
     id: 11,
@@ -144,7 +88,7 @@ export const products = [
     liked: false,
     userName: '김경훈',
     major: '글로벌비즈니스학과',
-    profileImageUrl: 'https://cdn-icons-png.flaticon.com/512/219/219983.png',
+    profileImageUrl: 'https://randomuser.me/api/portraits/men/29.jpg',
   },
   {
     id: 12,
@@ -157,7 +101,7 @@ export const products = [
     liked: true,
     userName: '오규찬',
     major: '글로벌비즈니스학과',
-    profileImageUrl: 'https://cdn-icons-png.flaticon.com/512/2922/2922510.png',
+    profileImageUrl: 'https://randomuser.me/api/portraits/men/23.jpg',
   },
   {
     id: 13,
@@ -170,7 +114,7 @@ export const products = [
     liked: true,
     userName: '이수진',
     major: '경영학과',
-    profileImageUrl: 'https://cdn-icons-png.flaticon.com/512/2922/2922529.png',
+    profileImageUrl: 'https://randomuser.me/api/portraits/women/23.jpg',
   },
   {
     id: 14,
@@ -183,7 +127,7 @@ export const products = [
     liked: false,
     userName: '지영민',
     major: '경영학과',
-    profileImageUrl: 'https://cdn-icons-png.flaticon.com/512/2922/2922506.png',
+    profileImageUrl: 'https://randomuser.me/api/portraits/men/18.jpg',
   },
   {
     id: 15,
@@ -196,8 +140,11 @@ export const products = [
     liked: false,
     userName: '권도윤',
     major: '글로벌비즈니스학과',
-    profileImageUrl: 'https://cdn-icons-png.flaticon.com/512/2922/2922501.png',
+    profileImageUrl: 'https://randomuser.me/api/portraits/men/52.jpg',
   },
+];
+
+export const checkReviews = [
   {
     id: 16,
     category: '기타제품',
@@ -209,7 +156,7 @@ export const products = [
     liked: true,
     userName: '조영운',
     major: '경영학과',
-    profileImageUrl: 'https://cdn-icons-png.flaticon.com/512/2922/2922556.png',
+    profileImageUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
   },
   {
     id: 17,
@@ -222,7 +169,7 @@ export const products = [
     liked: false,
     userName: '박민수',
     major: '글로벌비즈니스학과',
-    profileImageUrl: 'https://cdn-icons-png.flaticon.com/512/2922/2922505.png',
+    profileImageUrl: 'https://randomuser.me/api/portraits/men/65.jpg',
   },
   {
     id: 18,
@@ -235,7 +182,7 @@ export const products = [
     liked: true,
     userName: '이민수',
     major: 'AI학과',
-    profileImageUrl: 'https://cdn-icons-png.flaticon.com/512/2922/2922522.png',
+    profileImageUrl: 'https://randomuser.me/api/portraits/men/72.jpg',
   },
   {
     id: 19,
@@ -248,7 +195,7 @@ export const products = [
     liked: false,
     userName: '이수민',
     major: '소프트웨어학과',
-    profileImageUrl: 'https://cdn-icons-png.flaticon.com/512/2922/2922561.png',
+    profileImageUrl: 'https://randomuser.me/api/portraits/women/23.jpg',
   },
   {
     id: 20,
@@ -261,6 +208,6 @@ export const products = [
     liked: true,
     userName: '박민수',
     major: '글로벌비즈니스학과',
-    profileImageUrl: 'https://cdn-icons-png.flaticon.com/512/2922/2922566.png',
+    profileImageUrl: 'https://randomuser.me/api/portraits/men/17.jpg',
   },
 ];

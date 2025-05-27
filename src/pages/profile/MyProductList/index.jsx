@@ -1,9 +1,8 @@
-import React from 'react';
 import ProductList from '../../../components/profile/ProductList';
-import { products } from '../../../data/products';
+import { myProducts } from '../../../data/myProducts';
 
 const MyProductList = () => {
-  return <ProductList title="나의 판매 상품">{products}</ProductList>;
+  return <ProductList title="나의 판매 상품">{myProducts}</ProductList>;
 };
 
 export default MyProductList;

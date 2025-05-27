@@ -3,7 +3,15 @@ import StarRating from './StarRating';
 import KebabDropdown from './KebabDropdown';
 import clsx from 'clsx';
 
-const ReviewCheckItem = ({ id, title, desc, rate = 0, image, received }) => {
+const ReviewCheckItem = ({
+  id,
+  title,
+  desc,
+  rate = 0,
+  image,
+  product,
+  received,
+}) => {
   return (
     <div className={clsx(styles.container, received && styles.fullBorder)}>
       <img
@@ -18,7 +26,7 @@ const ReviewCheckItem = ({ id, title, desc, rate = 0, image, received }) => {
         </div>
         <div className={styles.desc}>{desc}</div>
       </div>
-      {!received && <KebabDropdown id={id} />}
+      {!received && <KebabDropdown id={id} product={product} />}
     </div>
   );
 };

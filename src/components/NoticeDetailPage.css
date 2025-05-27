@@ -86,7 +86,14 @@
   margin-bottom: 16px;
 }
 
+.notice-detail-image {
+  display: flex;
+  justify-content: center;
+}
+
 .notice-detail-content {
+  margin-top: 24px;
+  font-size: 24px;
   margin-bottom: 24px;
 }
 
@@ -105,7 +112,8 @@
   display: inline-block;
   color: #3dd598;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 .back-link:hover {

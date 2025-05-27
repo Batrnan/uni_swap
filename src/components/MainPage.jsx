@@ -1,7 +1,7 @@
 // src/components/MainPage.jsx
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { FaPlus } from 'react-icons/fa';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { FaBullhorn, FaPlus } from 'react-icons/fa';
 import './MainPage.css';
 import { products } from '../data/products';
 
@@ -17,17 +17,24 @@ const categories = [
 
 const MainPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [selectedCat, setSelectedCat] = useState('전체');
 
-  const filteredProducts =
+  const queryParams = new URLSearchParams(location.search);
+  const searchKeyword = queryParams.get('search')?.toLowerCase() || '';
+
+  const categoryFiltered =
     selectedCat === '전체'
       ? products
       : products.filter((p) => p.category === selectedCat);
 
+  const filteredProducts = categoryFiltered.filter((p) =>
+    p.title.toLowerCase().includes(searchKeyword)
+  );
+
   return (
     <div className="main-container">
-      {/* 공통 헤더 */}
-
+      {/* HEADER 생략 */}
       <div className="main-wrapper">
         {/* CATEGORY NAV */}
         <nav className="category-nav">
@@ -43,7 +50,10 @@ const MainPage = () => {
         </nav>
 
         {/* TIP BAR */}
-        <div className="tip-bar">거래 사기 방지 팁 및 피해 신고 관련</div>
+        <div className="tip-bar" onClick={() => navigate('/notices/1')}>
+          <FaBullhorn />
+          거래 사기 방지 팁 및 피해 신고 관련
+        </div>
 
         {/* PRODUCT GRID */}
         <section className="product-grid">
@@ -65,7 +75,6 @@ const MainPage = () => {
         </section>
       </div>
 
-      {/* FLOATING ACTION BUTTON */}
       <button className="fab" onClick={() => navigate('/Createproduct')}>
         <FaPlus className="icon" /> 판매글 쓰기
       </button>

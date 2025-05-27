@@ -3,13 +3,13 @@ import { GoKebabHorizontal } from 'react-icons/go';
 import styles from './KebabDropdown.module.css';
 import { useNavigate } from 'react-router-dom';
 
-const KebabDropdown = ({ id }) => {
+const KebabDropdown = ({ id, product }) => {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/products/${id}`);
+    navigate(`/products/${id}`, { state: { product } });
   };
 
   const handleReviewUpdate = () => {

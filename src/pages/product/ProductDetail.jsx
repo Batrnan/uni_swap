@@ -1,10 +1,10 @@
 // src/components/ProductDetail/ProductPage.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import styles from './ProductDetail.module.css';
 
-const ProductPage = ({ initialLiked = false }) => {
+const ProductPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
@@ -22,6 +22,12 @@ const ProductPage = ({ initialLiked = false }) => {
     navigate(`/chat/${id}`);
   };
 
+  const handleClick = () => {
+    product.userName === '홍길동'
+      ? navigate('/profile')
+      : navigate(`/public-profile`, { state: { product } });
+  };
+
   return (
     <>
       <div className={styles.container}>
@@ -35,7 +41,7 @@ const ProductPage = ({ initialLiked = false }) => {
             className={styles.profileImage}
             alt="프로필"
           />
-          <div className={styles.profileText}>
+          <div className={styles.profileText} onClick={handleClick}>
             <div className={styles.userName}>
               {product.userName || '홍길동'}
             </div>

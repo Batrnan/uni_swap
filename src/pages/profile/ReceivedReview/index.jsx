@@ -1,6 +1,6 @@
 import ProductLayout from '../../../components/profile/ProductLayout';
 import ReviewCheckItem from '../../../components/profile/ReviewCheckItem';
-import { products } from '../../../data/products';
+import { myProducts } from '../../../data/myProducts';
 
 const ReceivedReview = () => {
   return (
@@ -12,7 +12,7 @@ const ReceivedReview = () => {
           gap: '32px',
         }}
       >
-        {products.map((product) => (
+        {myProducts.map((product) => (
           <ReviewCheckItem
             key={product.id}
             image={product.image}

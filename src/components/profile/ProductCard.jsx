@@ -21,7 +21,7 @@ const ProductCard = ({ id, title, showLikeButton, image, product }) => {
         />
         {showLikeButton && (
           <div className={styles.likeIcon}>
-            <FaHeart color="red" />
+            <FaHeart color="#3dd598" />
           </div>
         )}
       </div>
