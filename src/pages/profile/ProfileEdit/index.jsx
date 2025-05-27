@@ -1,18 +1,19 @@
 import { useForm, Controller } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './ProfileEdit.module.css';
+import gildong from '../../../assets/gildong.jpg';
 
 const ProfileEdit = () => {
   const { control, handleSubmit } = useForm({
     defaultValues: {
-      username: '',
-      school: '',
-      major: '',
-      birth: null,
-      phone: '',
-      kakao: '',
+      email: 'test@example.com',
+      password: '******',
+      name: '홍길동',
+      nickname: '길동이',
+      school: '가천대학교',
+      major: '소프트웨어융합학과',
+      stdId: 202334297,
     },
   });
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const ProfileEdit = () => {
       <h1 className={styles.title}>프로필 설정</h1>
       {/* 프로필 이미지 영역 */}
       <div className={styles.profileRow}>
-        <div className={styles.profileBox} />
+        <img src={gildong} className={styles.profileBox} />
         <div className={styles.profileButtons}>
           <button className={styles.imageButton}>사진첨부</button>
           <button className={styles.imageButton}>사진삭제</button>
@@ -35,15 +36,69 @@ const ProfileEdit = () => {
 
       {/* 폼 시작 */}
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        {/* 사용자명 */}
-        <LabelWithInput label="사용자명">
+        <LabelWithInput label="이메일">
           <Controller
-            name="username"
+            name="email"
+            control={control}
+            render={({ field }) => (
+              <input
+                {...field}
+                placeholder="이메일을 입력해주세요"
+                className={styles.input}
+              />
+            )}
+          />
+        </LabelWithInput>
+        <LabelWithInput label="비밀번호">
+          <Controller
+            name="password"
+            control={control}
+            render={({ field }) => (
+              <input
+                {...field}
+                placeholder="비밀번호를 입력하세요"
+                className={styles.input}
+              />
+            )}
+          />
+        </LabelWithInput>
+        {/* 사용자명 */}
+        <LabelWithInput label="이름">
+          <Controller
+            name="name"
             control={control}
             render={({ field }) => (
               <input
                 {...field}
                 placeholder="사용자명을 입력해주세요"
+                className={styles.input}
+              />
+            )}
+          />
+        </LabelWithInput>
+
+        <LabelWithInput label="닉네임">
+          <Controller
+            name="nickname"
+            control={control}
+            render={({ field }) => (
+              <input
+                {...field}
+                placeholder="닉네임을 입력해주세요"
+                className={styles.input}
+              />
+            )}
+          />
+        </LabelWithInput>
+
+        <LabelWithInput label="학번">
+          <Controller
+            name="stdId"
+            control={control}
+            render={({ field }) => (
+              <input
+                {...field}
+                placeholder="학번을 입력하세요"
                 className={styles.input}
               />
             )}
@@ -78,66 +133,19 @@ const ProfileEdit = () => {
                 <option value="컴퓨터공학과">컴퓨터공학과</option>
                 <option value="전자공학과">전자공학과</option>
                 <option value="경영학과">경영학과</option>
+                <option value="소프트웨어융합학과">소프트웨어융합학과</option>
               </select>
-            )}
-          />
-        </LabelWithInput>
-
-        {/* 생년월일 - DatePicker */}
-        <LabelWithInput label="생년월일">
-          <Controller
-            name="birth"
-            control={control}
-            render={({ field }) => (
-              <DatePicker
-                withPortal
-                placeholderText="생년월일을 선택하세요"
-                onChange={(date) => field.onChange(date)}
-                selected={field.value}
-                dateFormat="yyyy-MM-dd"
-                maxDate={new Date()}
-                showYearDropdown
-                scrollableYearDropdown
-                yearDropdownItemNumber={100}
-                className={styles.datepickerInput}
-              />
-            )}
-          />
-        </LabelWithInput>
-
-        {/* 전화번호 */}
-        <LabelWithInput label="전화번호">
-          <Controller
-            name="phone"
-            control={control}
-            render={({ field }) => (
-              <input
-                {...field}
-                placeholder="전화번호를 입력하세요"
-                className={styles.input}
-              />
-            )}
-          />
-        </LabelWithInput>
-
-        {/* 카카오톡 ID */}
-        <LabelWithInput label="카카오톡 ID">
-          <Controller
-            name="kakao"
-            control={control}
-            render={({ field }) => (
-              <input
-                {...field}
-                placeholder="카카오톡 ID를 입력하세요"
-                className={styles.input}
-              />
             )}
           />
         </LabelWithInput>
 
         {/* 저장 / 취소 버튼 */}
         <div className={styles.buttonGroup}>
-          <button type="submit" className={styles.button}>
+          <button
+            type="submit"
+            onClick={() => navigate('/profile')}
+            className={styles.button}
+          >
             저장
           </button>
           <button

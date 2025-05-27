@@ -3,10 +3,22 @@ import StarRating from './StarRating';
 import KebabDropdown from './KebabDropdown';
 import clsx from 'clsx';
 
-const ReviewCheckItem = ({ title, desc, rate = 0, received }) => {
+const ReviewCheckItem = ({
+  id,
+  title,
+  desc,
+  rate = 0,
+  image,
+  product,
+  received,
+}) => {
   return (
     <div className={clsx(styles.container, received && styles.fullBorder)}>
-      <div className={styles.thumb} />
+      <img
+        src={require(`../../assets/${image}`)}
+        alt={title}
+        className={styles.thumb}
+      />
       <div className={styles.content}>
         <div className={styles.title}>{title}</div>
         <div className={styles.price}>
@@ -14,7 +26,7 @@ const ReviewCheckItem = ({ title, desc, rate = 0, received }) => {
         </div>
         <div className={styles.desc}>{desc}</div>
       </div>
-      {!received && <KebabDropdown />}
+      {!received && <KebabDropdown id={id} product={product} />}
     </div>
   );
 };

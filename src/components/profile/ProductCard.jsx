@@ -1,14 +1,27 @@
-import React from 'react';
 import styles from './ProductCard.module.css';
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
-const ProductCard = ({ title, initialLike, showLikeButton }) => {
+const ProductCard = ({ id, title, showLikeButton, image, product }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/products/${id}`, {
+      state: { product },
+    });
+  };
+
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={handleClick}>
       <div className={styles.imageArea}>
+        <img
+          src={require(`../../assets/${image}`)}
+          alt={title}
+          className={styles.image}
+        />
         {showLikeButton && (
           <div className={styles.likeIcon}>
-            {initialLike ? <FaHeart color="red" /> : <FaRegHeart />}
+            <FaHeart color="#3dd598" />
           </div>
         )}
       </div>

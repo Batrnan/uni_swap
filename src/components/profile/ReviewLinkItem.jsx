@@ -1,4 +1,4 @@
-import { FaArrowAltCircleRight } from 'react-icons/fa';
+import { IoIosArrowForward } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
 const ReviewLinkItem = ({ label, href }) => {
@@ -11,7 +11,13 @@ const ReviewLinkItem = ({ label, href }) => {
         cursor: 'pointer',
       }}
     >
-      <span>{label}</span>
+      <span
+        style={{
+          fontSize: '20px',
+        }}
+      >
+        {label}
+      </span>
       <Link
         to={href}
         style={{
@@ -19,7 +25,7 @@ const ReviewLinkItem = ({ label, href }) => {
           color: 'inherit', // 현재 부모 요소의 색상 유지
         }}
       >
-        <FaArrowAltCircleRight size={30} />
+        <IoIosArrowForward size={30} color="white" />
       </Link>
     </div>
   );

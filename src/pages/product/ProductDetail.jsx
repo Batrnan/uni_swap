@@ -1,16 +1,15 @@
 // src/components/ProductDetail/ProductPage.jsx
-import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
-import Header from "../../components/share/Header";
-import styles from "./ProductDetail.module.css";
-import { products } from "../../data/products";
+import { useState } from 'react';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import styles from './ProductDetail.module.css';
 
-const ProductPage = ({ initialLiked = false }) => {
+const ProductPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const product = products.find((p) => p.id === parseInt(id, 10));
-  const [liked, setLiked] = useState(initialLiked);
+  const location = useLocation();
+  const product = location.state?.product;
+  const [liked, setLiked] = useState(product?.liked ?? false);
 
   if (!product) return <p>상품을 찾을 수 없습니다.</p>;
 
@@ -23,22 +22,31 @@ const ProductPage = ({ initialLiked = false }) => {
     navigate(`/chat/${id}`);
   };
 
+  const handleClick = () => {
+    product.userName === '홍길동'
+      ? navigate('/profile')
+      : navigate(`/public-profile`, { state: { product } });
+  };
+
   return (
     <>
       <div className={styles.container}>
         {/* 프로필 섹션 */}
         <div className={styles.profileSection}>
           <img
-            src={product.profileImageUrl || "https://via.placeholder.com/90"}
+            src={
+              product.profileImageUrl ||
+              'https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png'
+            }
             className={styles.profileImage}
             alt="프로필"
           />
-          <div className={styles.profileText}>
+          <div className={styles.profileText} onClick={handleClick}>
             <div className={styles.userName}>
-              {product.userName || "홍길동"}
+              {product.userName || '홍길동'}
             </div>
             <div className={styles.major}>
-              {product.major || "소프트웨어 전공"}
+              {product.major || '소프트웨어 전공'}
             </div>
           </div>
         </div>
@@ -55,7 +63,7 @@ const ProductPage = ({ initialLiked = false }) => {
             <div className={styles.price}>
               {product.price > 0
                 ? `${product.price.toLocaleString()}원`
-                : "무료나눔"}
+                : '무료나눔'}
             </div>
             <div className={styles.location}>
               {/* 위치 아이콘 */}
@@ -73,12 +81,12 @@ const ProductPage = ({ initialLiked = false }) => {
                 />
               </svg>
               <span className={styles.locationName}>
-                {product.location || "서울특별시 강남구 역삼동"}
+                {product.location || '서울특별시 강남구 역삼동'}
               </span>
             </div>
 
             <p className={styles.description}>
-              {product.description || "상태 양호, 사용감 있음"}
+              {product.description || '상태 양호, 사용감 있음'}
             </p>
 
             {/* 액션 버튼 */}
@@ -95,7 +103,7 @@ const ProductPage = ({ initialLiked = false }) => {
                 className={styles.likeButton}
                 onClick={toggleLike}
                 aria-pressed={liked}
-                aria-label={liked ? "좋아요 취소" : "좋아요"}
+                aria-label={liked ? '좋아요 취소' : '좋아요'}
               >
                 {liked ? (
                   <FaHeart size={24} color="teal" />

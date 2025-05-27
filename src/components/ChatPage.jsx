@@ -1,33 +1,33 @@
 // src/components/ChatPage.jsx
-import React, { useState, useRef, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import { FaEllipsisV } from "react-icons/fa";
-import "./ChatPage.css";
+import React, { useState, useRef, useEffect } from 'react';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import { FaEllipsisV } from 'react-icons/fa';
+import './ChatPage.css';
 
 const chats = [
   {
-    id: "1",
-    name: "GCW",
-    avatar: "GCW.jpg",
+    id: '1',
+    name: 'GCW',
+    avatar: 'GCW.jpg',
     messages: [
-      { fromMe: true, text: "안녕하세요! 구매 가능할까요?" },
-      { fromMe: false, text: "네 가능합니다." },
+      { fromMe: true, text: '안녕하세요! 구매 가능할까요?' },
+      { fromMe: false, text: '네 가능합니다.' },
     ],
   },
   {
-    id: "2",
-    name: "홍대피플",
-    avatar: "Hong.jpg",
+    id: '2',
+    name: '홍대피플',
+    avatar: 'Hong.jpg',
     messages: [
-      { fromMe: false, text: "거래 가능한가요?" },
-      { fromMe: true, text: "네, 직거래만 가능합니다." },
+      { fromMe: false, text: '거래 가능한가요?' },
+      { fromMe: true, text: '네, 직거래만 가능합니다.' },
     ],
   },
   {
-    id: "3",
-    name: "서연고 레츠고",
-    avatar: "Watch.jpg",
-    messages: [{ fromMe: false, text: "혹시 사이즈가 어떻게 될까요?" }],
+    id: '3',
+    name: '서연고 레츠고',
+    avatar: 'Watch.jpg',
+    messages: [{ fromMe: false, text: '혹시 사이즈가 어떻게 될까요?' }],
   },
 ];
 
@@ -37,7 +37,7 @@ const ChatPage = () => {
   const chatIndex = chats.findIndex((c) => c.id === id);
   const selected = chats[chatIndex];
   const [menuOpen, setMenuOpen] = useState(false);
-  const [newMessage, setNewMessage] = useState("");
+  const [newMessage, setNewMessage] = useState('');
   const menuRef = useRef(null);
   const messagesEndRef = useRef(null);
 
@@ -48,31 +48,31 @@ const ChatPage = () => {
         setMenuOpen(false);
       }
     };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
   }, []);
 
   // 새 메시지 추가 시 스크롤
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [selected?.messages]);
 
   const handleSend = () => {
     if (!newMessage.trim() || !selected) return;
     selected.messages.push({ fromMe: true, text: newMessage.trim() });
-    setNewMessage("");
+    setNewMessage('');
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       e.preventDefault();
       handleSend();
     }
   };
 
   const handleBlock = () => {
-    alert("차단되었습니다");
-    navigate("/chat");
+    alert('차단되었습니다');
+    navigate('/chat');
   };
 
   return (
@@ -87,7 +87,7 @@ const ChatPage = () => {
               <Link
                 to={`/chat/${c.id}`}
                 key={c.id}
-                className={`chat-item ${c.id === id ? "active" : ""}`}
+                className={`chat-item ${c.id === id ? 'active' : ''}`}
               >
                 <img src={avatarSrc} alt={c.name} className="avatar" />
                 <div className="chat-info">
@@ -95,7 +95,7 @@ const ChatPage = () => {
                   <div className="chat-last">
                     {c.messages.length
                       ? c.messages[c.messages.length - 1].text
-                      : "메시지 없음"}
+                      : '메시지 없음'}
                   </div>
                 </div>
               </Link>
@@ -130,7 +130,7 @@ const ChatPage = () => {
                         <button onClick={handleBlock}>대화상대 차단</button>
                       </li>
                       <li>
-                        <button onClick={() => alert("신고 처리되었습니다")}>
+                        <button onClick={() => navigate('/complains')}>
                           대화상대 신고
                         </button>
                       </li>
@@ -148,7 +148,7 @@ const ChatPage = () => {
                         <button
                           onClick={() => {
                             setMenuOpen(false);
-                            navigate("/chat");
+                            navigate('/chat');
                           }}
                         >
                           나가기
@@ -163,7 +163,7 @@ const ChatPage = () => {
                 {selected.messages.map((msg, idx) => (
                   <div
                     key={idx}
-                    className={`message ${msg.fromMe ? "sent" : "received"}`}
+                    className={`message ${msg.fromMe ? 'sent' : 'received'}`}
                   >
                     {msg.text}
                   </div>

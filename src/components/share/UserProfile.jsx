@@ -4,7 +4,6 @@ import styles from './UserProfile.module.css';
 
 const UserProfile = ({ profileImageUrl, nickname, major }) => {
   const location = useLocation();
-
   // 현재 URL이 '/public-profile'이면 settings 아이콘을 숨깁니다.
   const isPublicProfile = location.pathname === '/public-profile';
 

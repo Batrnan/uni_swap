@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import styles from "./WriteProduct.module.css";
-import KakaoMapSelect from "../../components/product/kakaoMapSelect"; // 경로 맞게 조정하세요
+import React, { useState } from 'react';
+import styles from './WriteProduct.module.css';
+import KakaoMapSelect from '../../components/product/kakaoMapSelect'; // 경로 맞게 조정하세요
 
 const WriteProduct = () => {
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [description, setDescription] = useState("");
-  const [status, setStatus] = useState("판매중");
+  const [title, setTitle] = useState('');
+  const [price, setPrice] = useState('');
+  const [description, setDescription] = useState('');
+  const [status, setStatus] = useState('판매중');
   const [selectLocationOpen, setSelectLocationOpen] = useState(false);
-  const [selectedLocation, setSelectedLocation] = useState(""); // 선택된 장소 이름 저장
+  const [selectedLocation, setSelectedLocation] = useState(''); // 선택된 장소 이름 저장
 
   const handleSubmit = () => {
-    alert("상품이 등록되었습니다!");
+    alert('상품이 등록되었습니다!');
   };
 
   // 카카오 지도에서 장소 선택 완료 콜백
@@ -26,7 +26,7 @@ const WriteProduct = () => {
 
       <label className={styles.photoSelector}>
         상품 사진 선택
-        <input type="file" accept="image/*" style={{ display: "none" }} />
+        <input type="file" accept="image/*" style={{ display: 'none' }} />
       </label>
 
       <input
@@ -74,8 +74,8 @@ const WriteProduct = () => {
             type="radio"
             name="status"
             value="판매중"
-            checked={status === "판매중"}
-            onChange={() => setStatus("판매중")}
+            checked={status === '판매중'}
+            onChange={() => setStatus('판매중')}
           />
           판매중
         </label>
@@ -84,8 +84,8 @@ const WriteProduct = () => {
             type="radio"
             name="status"
             value="예약중"
-            checked={status === "예약중"}
-            onChange={() => setStatus("예약중")}
+            checked={status === '예약중'}
+            onChange={() => setStatus('예약중')}
           />
           예약중
         </label>
@@ -94,8 +94,8 @@ const WriteProduct = () => {
             type="radio"
             name="status"
             value="판매완료"
-            checked={status === "판매완료"}
-            onChange={() => setStatus("판매완료")}
+            checked={status === '판매완료'}
+            onChange={() => setStatus('판매완료')}
           />
           판매완료
         </label>
